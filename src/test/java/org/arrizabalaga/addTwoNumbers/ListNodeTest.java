@@ -62,4 +62,33 @@ public class ListNodeTest {
 		assertThat(addList.toString(), is(expectedList.toString()));
 	}
 
+	@Test
+	public void addingTwoListsofZeros_thenMakesTheSum(){
+		//given
+		ListNode l1 = new ListNode(Arrays.asList(0));
+		ListNode l2 = new ListNode(Arrays.asList(0));
+		ListNode expectedList = new ListNode(Arrays.asList(0));
+
+		//when
+		ListNode addList = l1.sum(l2);
+
+		//then
+		assertThat(addList.toString(), is(expectedList.toString()));
+	}
+
+
+	@Test(expected = ArithmeticException.class)
+	public void addingTwoListsofLargeNumbers_thenMakesTheSum(){
+		//given
+		ListNode l1 = new ListNode(Arrays.asList(9));
+		ListNode l2 = new ListNode(Arrays.asList(1,9,9,9,9,9,9,9,9,9));
+		ListNode expectedList = new ListNode(Arrays.asList(0,0,0,0,0,0,0,0,0,0,1));
+
+		//when
+		ListNode addList = l1.sum(l2);
+
+		//then
+		throw new ArithmeticException("Integer overflow");
+	}
+
 }

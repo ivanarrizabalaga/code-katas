@@ -75,7 +75,7 @@ public class ListNode {
 		ListNode currentNode;
 		ListNode root = null;
 
-		while(left>0){
+		while(true){
 			Integer mod = left%10;
 			left = left/10;
 			currentNode = new ListNode(mod);
@@ -86,6 +86,10 @@ public class ListNode {
 				previousNode.next=currentNode;
 			}
 			previousNode=currentNode;
+
+			if(left==0){
+				break;
+			}
 		}
 		return root;
 	}
