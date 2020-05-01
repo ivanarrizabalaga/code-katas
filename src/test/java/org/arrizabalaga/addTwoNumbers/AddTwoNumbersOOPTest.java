@@ -8,11 +8,17 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
- * @author <a href="mailto:ivan@zapiens.org">Ivan Arrizabalaga</a>
+ * @author <a href="mailto:ivan.arrizabalaga@gmail.com">Ivan Arrizabalaga</a>
  */
-public class AddTwoNumbersOOPTest {
+public class AddTwoNumbersOOPTest extends AddTwoNumbersTest{
 
 	private AddTwoNumbersOOP addTwoNumbersOOP=new AddTwoNumbersOOP();
+
+	@Override
+	protected IAddTwoNumbers createSUT() {
+		return addTwoNumbersOOP;
+	}
+
 	@Test
 	public void whenToInteger_thenSumsValues(){
 		//given
@@ -36,35 +42,6 @@ public class AddTwoNumbersOOPTest {
 		//then
 		assertThat(listNode.toString(), is("3 -> 2 -> 4"));
 	}
-
-	@Test
-	public void addingTwoLists_thenMakesTheSum(){
-		//given
-		ListNode l1 = new ListNode(Arrays.asList(2,4,3));
-		ListNode l2 = new ListNode(Arrays.asList(5,6,4));
-		ListNode expectedList = new ListNode(Arrays.asList(7,0,8));
-
-		//when
-		ListNode addList = addTwoNumbersOOP.addTwoNumbers(l1, l2);
-
-		//then
-		assertThat(addList.toString(), is(expectedList.toString()));
-	}
-
-	@Test
-	public void addingTwoListsofZeros_thenMakesTheSum(){
-		//given
-		ListNode l1 = new ListNode(Arrays.asList(0));
-		ListNode l2 = new ListNode(Arrays.asList(0));
-		ListNode expectedList = new ListNode(Arrays.asList(0));
-
-		//when
-		ListNode addList = addTwoNumbersOOP.addTwoNumbers(l1,l2);
-
-		//then
-		assertThat(addList.toString(), is(expectedList.toString()));
-	}
-
 
 	@Test(expected = ArithmeticException.class)
 	public void addingTwoListsofLargeNumbers_thenMakesTheSum(){

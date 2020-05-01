@@ -3,7 +3,7 @@ package org.arrizabalaga.addTwoNumbers;
 import java.util.List;
 
 /**
- * @author <a href="mailto:ivan@zapiens.org">Ivan Arrizabalaga</a>
+ * @author <a href="mailto:ivan.arrizabalaga@gmail.com">Ivan Arrizabalaga</a>
  */
 public class ListNode {
 	int val;

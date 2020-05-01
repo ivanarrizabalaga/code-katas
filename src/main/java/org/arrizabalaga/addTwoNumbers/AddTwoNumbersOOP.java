@@ -1,9 +1,13 @@
 package org.arrizabalaga.addTwoNumbers;
 
 /**
- * @author <a href="mailto:ivan@zapiens.org">Ivan Arrizabalaga</a>
+ * A comprehensive approach where based on simple operations the exercise can be done.
+ * Cons? There is overflow when dealing with big numbers.
+ *
+ * @author <a href="mailto:ivan.arrizabalaga@gmail.com">Ivan Arrizabalaga</a>
  */
-public class AddTwoNumbersOOP {
+public class AddTwoNumbersOOP implements IAddTwoNumbers{
+	@Override
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		//Turn lists into Integers
 		Integer l1Sum = toInteger(l1);
